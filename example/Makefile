@@ -1,8 +1,12 @@
 # Make file for Win32s example on Windows using OpenWatcom 2.0
+#
+# You may need to set include path to include <OW20 path>\H\nt
+# if not compiling from win32. for example:
+# set include=%watcom%\h;%watcom%\h\nt
 
 CC=wcc386
-CFLAGS=-bm -zq -DWIN32 -D_WIN32_WINNT=0x0351
-LDFLAGS=SYS nt_win  runtime win=3.10
+CFLAGS=-bt=nt -zq
+LDFLAGS=op q SYS nt_win  runtime win=3.10
 
 ALL: example.exe
 
